@@ -6,7 +6,7 @@ Este documento establece las reglas de convivencia, comunicación y estándares 
 | Nombre | Rol | Usuario de GitHub |
 | :--- | :--- | :--- |
 | [Haziel Josue Solano] | Líder (Arquitecto) | `josuesolano21` |
-| [Nombre del Aprendiz 2] | Desarrollador | `@usuario2` |
+| [Julian Andres Diaz Otavo] | Desarrollador | `@juliandiaz-05` |
 | [Nombre del Aprendiz 3] | Desarrollador | `@usuario3` |
 
 ## 2. Canales de Comunicación
