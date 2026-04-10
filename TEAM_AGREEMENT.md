@@ -4,10 +4,10 @@ Este documento establece las reglas de convivencia, comunicación y estándares 
 
 ## 1. Miembros del Equipo y Roles
 
-| Nombre                           | Rol                | Usuario de GitHub  |
-| :------------------------------- | :----------------- | :----------------- |
-| [Haziel Josue Solano]            | Líder (Arquitecto) | `josuesolano21`    |
-| [Nombre del Aprendiz 2]          | Desarrollador      | `@usuario2`        |
+| Nombre | Rol | Usuario de GitHub |
+| :--- | :--- | :--- |
+| [Haziel Josue Solano] | Líder (Arquitecto) | `josuesolano21` |
+| [Julian Andres Diaz Otavo] | Desarrollador | `@juliandiaz-05` |
 | [Sara Valentina Estupiñan Rojas] | Desarrollador      | `@sararojas315656` |
 
 ## 2. Canales de Comunicación
