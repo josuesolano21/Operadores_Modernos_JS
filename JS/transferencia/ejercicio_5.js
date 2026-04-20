@@ -14,3 +14,27 @@ o validacion: false si ocurrió un error
 Resultado esperado:
 Un objeto final consolidado, estable y construido con prácticas de programación segura,
 que refleje el uso combinado de todos los conceptos de la guía.*/
+
+
+const baseConfig = { modo: "produccion", lenguaje: "es", nivel: 1 };
+const extraConfig = { nivel: 2, tema: "oscuro" };
+
+function configFinal(...configs) {
+  try {
+    for (const config of configs) {
+      if (typeof config !== "object" || config === null || Array.isArray(config)) {
+        throw new Error(`"${config}" no es un objeto válido`);
+      }
+    }
+
+    const resultado = configs.reduce((acc, config) => ({ ...acc, ...config }), {});
+
+    return { ...resultado, validacion: true };
+
+  } catch (error) {
+    console.error("Error:", error.message);
+    return { validacion: false };
+  }
+}
+
+export { baseConfig, extraConfig, configFinal };
