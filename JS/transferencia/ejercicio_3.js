@@ -16,3 +16,41 @@ o Primer producto adquirido
 Resultado esperado:
 Un informe completo y coherente, construido con técnicas de inmutabilidad y manejo
 seguro de errores.*/
+const procesarCompra = (cliente, productos) => {
+  try {
+    // 1. Validación de datos
+    if (!cliente?.nombre || !cliente?.correo) throw new Error("Datos del cliente incompletos.");
+    if (!Array.isArray(productos) || productos.length === 0) throw new Error("Lista de productos no válida.");
+
+    // 2. Spread para crear nuevo objeto del cliente (Inmutabilidad)
+    const infoCliente = { ...cliente };
+
+    // 3. Destructuración para separar el primero del resto
+    const [primerProducto, ...resto] = productos;
+
+    // Cálculo del precio total
+    const precioTotal = productos.reduce((acc, p) => acc + p.precio, 0);
+
+    // 4. Retornar informe
+    return {
+      cliente: infoCliente,
+      totalProductos: productos.length,
+      precioTotal: precioTotal,
+      primerProductoAdquirido: primerProducto.nombre,
+      otrosProductos: resto.map(p => p.nombre)
+    };
+
+  } catch (error) {
+    return { error: error.message };
+  }
+};
+
+// --- Ejemplo de uso ---
+const datosCliente = { nombre: "Luis", correo: "luis@mail.com" };
+const listaProductos = [
+  { nombre: "Teclado", precio: 50 },
+  { nombre: "Mouse", precio: 25 },
+  { nombre: "Monitor", precio: 200 }
+];
+
+console.log(procesarCompra(datosCliente, listaProductos));
