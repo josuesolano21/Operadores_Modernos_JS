@@ -19,3 +19,26 @@ Resultado esperado:
 Una nueva colección combinada, ordenada e inmutable. Si un parámetro no es un arreglo,
 debe mostrarse un error comprensible.
 */
+
+const catA = [
+    { id: 1, nombre: "Curso JavaScript", precio: 40000 },
+    { id: 2, nombre: "Curso HTML",       precio: 35000 }
+];
+
+const catB = [
+    { id: 3, nombre: "Curso CSS", precio: 30000 }
+];
+
+function Catalogos(a, b) {
+    try {
+    const fusion = [...a, ...b];
+    console.log(fusion);
+    } catch {
+    console.log("Error: No válido");
+    }
+}
+
+fusionarCatalogos(catA, catB);
+
+export { catA, catB, Catalogos };
+
