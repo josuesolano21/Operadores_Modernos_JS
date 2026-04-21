@@ -21,24 +21,34 @@ debe mostrarse un error comprensible.
 */
 
 const catA = [
-    { id: 1, nombre: "Curso JavaScript", precio: 40000 },
-    { id: 2, nombre: "Curso HTML",       precio: 35000 }
+  { id: 1, nombre: "Curso JavaScript", precio: 40000 },
+  { id: 2, nombre: "Curso HTML",       precio: 35000 }
 ];
 
 const catB = [
-    { id: 3, nombre: "Curso CSS", precio: 30000 }
+  { id: 3, nombre: "Curso CSS", precio: 30000 }
 ];
 
-function Catalogos(a, b) {
-    try {
-    const fusion = [...a, ...b];
-    console.log(fusion);
-    } catch {
-    console.log("Error: No válido");
+function fusionarCatalogos(a, b) {
+  try {
+    // validamos que ambos parámetros sean arreglos
+    if (!Array.isArray(a) || !Array.isArray(b)) {
+      throw new Error("Ambos parámetros deben ser arreglos");
     }
+
+    // fusionamos sin mutar los originales
+    const fusion = [...a, ...b];
+
+    // retornamos ordenado por precio ascendente sin mutar fusion
+    return [...fusion].sort((x, y) => x.precio - y.precio);
+
+  } catch (error) {
+    return { error: error.message };
+  }
 }
 
-fusionarCatalogos(catA, catB);
+console.log(fusionarCatalogos(catA, catB)); // caso válido
+console.log(fusionarCatalogos(catA, "hola")); // caso inválido
 
-export { catA, catB, Catalogos };
+export { catA, catB, fusionarCatalogos };
 
