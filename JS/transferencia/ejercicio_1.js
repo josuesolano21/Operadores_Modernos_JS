@@ -16,3 +16,23 @@ o Total de notas registradas
 Resultado esperado:
 Un objeto final correctamente construido, sin mutar ningún arreglo externo, con cálculos
 correctos y con manejo adecuado de errores.*/
+
+function Estudiante(nombre, ...notas) {
+    try {
+    const [primera, ...resto] = notas;
+
+    const promedio = (resto[0] + resto[1] + resto[2]) / resto.length;
+
+    console.log("Nombre:", nombre);
+    console.log("Primera nota:", primera);
+    console.log("Promedio del resto:", promedio);
+    console.log("Total de notas:", notas.length);
+
+    } catch (e) {
+    console.log("Error: las notas no son válidas");
+    }
+}
+
+Estudiante("Pepito", 4.5, 3.8, 4.0, 5.0);
+
+export { Estudiante };
